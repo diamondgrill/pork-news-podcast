@@ -36,6 +36,28 @@ def log(msg):
     print(msg, flush=True)
 
 
+# Chirp 3 HD は1文の長さに上限がある。超えた文は読点で分割し文末扱いにする。
+MAX_SENTENCE_CHARS = 100
+
+
+def split_long_sentence(s, limit=MAX_SENTENCE_CHARS):
+    if len(s) <= limit:
+        return [s]
+    parts = []
+    while len(s) > limit:
+        cut = s.rfind("、", 20, limit)
+        if cut == -1:
+            cut = limit - 1
+        piece = s[: cut + 1].rstrip("、")
+        if not piece.endswith(("。", "！", "？")):
+            piece += "。"
+        parts.append(piece)
+        s = s[cut + 1:]
+    if s:
+        parts.append(s)
+    return parts
+
+
 def chunk_text(text, max_chars=MAX_CHUNK_CHARS):
     sentences = []
     for para in re.split(r"\n+", text):
@@ -43,7 +65,12 @@ def chunk_text(text, max_chars=MAX_CHUNK_CHARS):
         if not para:
             continue
         parts = re.split(r"(?<=[。！？])", para)
-        sentences.extend(p for p in parts if p.strip())
+        for p in parts:
+            if not p.strip():
+                continue
+            if not p.endswith(("。", "！", "？")):
+                p += "。"
+            sentences.extend(split_long_sentence(p))
     chunks, cur = [], ""
     for s in sentences:
         if cur and len(cur) + len(s) > max_chars:
