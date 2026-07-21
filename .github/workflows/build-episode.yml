@@ -35,6 +35,9 @@ jobs:
         if: github.ref_name != 'main'
         run: rsync -a trigger/episodes/ main/episodes/
 
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       - name: Build episodes and feed
         working-directory: main
         env:

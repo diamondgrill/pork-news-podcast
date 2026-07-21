@@ -104,7 +104,11 @@ def build_audio(script_path, out_mp3, api_key):
                         break
                     except urllib.error.HTTPError as e:
                         last_err = e
-                        log(f"voice {cand} 失敗: HTTP {e.code}")
+                        try:
+                            detail = e.read().decode("utf-8", "replace")[:300]
+                        except Exception:
+                            detail = ""
+                        log(f"voice {cand} 失敗: HTTP {e.code} {detail}")
                 if voice is None:
                     raise SystemExit(f"全ての voice で合成に失敗: {last_err}")
             else:
