@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>豚肉業界ニュース デイリー</title>
+    <description>Notion に収集した豚肉業界の国内外ニュースを、毎朝1本の音声にまとめた自動生成ポッドキャスト（個人用）</description>
+    <link>https://diamondgrill.github.io/pork-news-podcast</link>
+    <language>ja</language>
+    <itunes:author>豚肉業界ニュース</itunes:author>
+    <itunes:block>Yes</itunes:block>
+
+  </channel>
+</rss>

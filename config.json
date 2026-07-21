@@ -1,0 +1,15 @@
+{
+  "podcast_title": "豚肉業界ニュース デイリー",
+  "podcast_description": "Notion に収集した豚肉業界の国内外ニュースを、毎朝1本の音声にまとめた自動生成ポッドキャスト（個人用）",
+  "author": "豚肉業界ニュース",
+  "language": "ja-JP",
+  "voices": [
+    "ja-JP-Chirp3-HD-Charon",
+    "ja-JP-Chirp3-HD-Kore",
+    "ja-JP-Neural2-B"
+  ],
+  "repo": "diamondgrill/pork-news-podcast",
+  "base_url": "https://diamondgrill.github.io/pork-news-podcast",
+  "feed_token": "5221e23a16c005c53eb924ce",
+  "max_feed_items": 60
+}

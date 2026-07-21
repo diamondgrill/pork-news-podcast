@@ -1,0 +1,61 @@
+name: build-episode
+
+on:
+  push:
+    paths:
+      - "episodes/**"
+  workflow_dispatch: {}
+
+concurrency:
+  group: build-episode
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      - name: Checkout trigger ref
+        if: github.ref_name != 'main'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          path: trigger
+
+      # ルーティーンが main 以外のブランチに push した場合、エピソードファイルを main 側に取り込む
+      - name: Merge episode files from trigger branch
+        if: github.ref_name != 'main'
+        run: rsync -a trigger/episodes/ main/episodes/
+
+      - name: Build episodes and feed
+        working-directory: main
+        env:
+          GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/build_episode.py
+
+      - name: Commit results to main
+        working-directory: main
+        run: |
+          git config user.name "podcast-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add episodes docs
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "build: エピソード生成 $(TZ=Asia/Tokyo date +%F)"
+            git push origin main
+          fi
+
+      - name: Delete trigger branch
+        if: github.ref_name != 'main' && startsWith(github.ref_name, 'claude/')
+        working-directory: main
+        run: git push origin --delete "${{ github.ref_name }}" || true
