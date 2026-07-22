@@ -1,12 +1,12 @@
 {
-  "podcast_title": "豚肉業界ニュース デイリー",
-  "podcast_description": "Notion に収集した豚肉業界の国内外ニュースを、毎朝1本の音声にまとめた自動生成ポッドキャスト（個人用）",
-  "author": "豚肉業界ニュース",
-  "language": "ja-JP",
+  "podcast_title": "Pork Industry News Daily",
+  "podcast_description": "An automated daily audio briefing of global pork industry news, generated from a curated Notion news database.",
+  "author": "Pork Industry News",
+  "language": "en-US",
   "voices": [
-    "ja-JP-Chirp3-HD-Charon",
-    "ja-JP-Chirp3-HD-Kore",
-    "ja-JP-Neural2-B"
+    "en-US-Chirp3-HD-Charon",
+    "en-US-Chirp3-HD-Kore",
+    "en-US-Neural2-D"
   ],
   "repo": "diamondgrill/pork-news-podcast",
   "base_url": "https://diamondgrill.github.io/pork-news-podcast",

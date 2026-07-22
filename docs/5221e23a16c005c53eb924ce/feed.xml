@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
-    <title>豚肉業界ニュース デイリー</title>
-    <description>Notion に収集した豚肉業界の国内外ニュースを、毎朝1本の音声にまとめた自動生成ポッドキャスト（個人用）</description>
+    <title>Pork Industry News Daily</title>
+    <description>An automated daily audio briefing of global pork industry news, generated from a curated Notion news database.</description>
     <link>https://diamondgrill.github.io/pork-news-podcast</link>
     <language>ja</language>
-    <itunes:author>豚肉業界ニュース</itunes:author>
+    <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
-      <title>July 22 Pork Industry News (English test)</title>
-      <description>English-language test edition of the daily pork industry briefing.</description>
+      <title>July 22 Pork Industry News</title>
+      <description>African Swine Fever at record global risk, tight U.S. hog supply lifts prices, and China deepens oversupply.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-22-en/porkcast-2026-07-22-en.mp3" length="4806574" type="audio/mpeg"/>
       <guid isPermaLink="false">porkcast-2026-07-22-en</guid>
       <pubDate>Wed, 22 Jul 2026 09:00:00 +0900</pubDate>
       <itunes:duration>0:10:01</itunes:duration>
-    </item>
-    <item>
-      <title>7月22日 豚肉業界ニュース</title>
-      <description>欧州でのASF発生動向とグローバルな疾病リスク、米国の相場と需給、対中関税と米EU貿易枠組み、中国の供給過剰とEU市場の価格下落を中心にお伝えします。</description>
-      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-22/porkcast-2026-07-22.mp3" length="6395446" type="audio/mpeg"/>
-      <guid isPermaLink="false">porkcast-2026-07-22</guid>
-      <pubDate>Wed, 22 Jul 2026 09:00:00 +0900</pubDate>
-      <itunes:duration>0:13:19</itunes:duration>
     </item>
   </channel>
 </rss>
