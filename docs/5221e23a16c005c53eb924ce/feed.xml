@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>July 23 Pork Industry News</title>
+      <description>Tight U.S. breeding herds keep hog prices elevated even as global oversupply warnings grow, African swine fever spreads in Germany and Poland, and China, Canada, and Mexico trade issues remain in focus.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-23/porkcast-2026-07-23.mp3" length="4190084" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-07-23</guid>
+      <pubDate>Thu, 23 Jul 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:44</itunes:duration>
+    </item>
+    <item>
       <title>July 22 Pork Industry News</title>
       <description>African Swine Fever at record global risk, tight U.S. hog supply lifts prices, and China deepens oversupply.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-22-en/porkcast-2026-07-22-en.mp3" length="4806574" type="audio/mpeg"/>
