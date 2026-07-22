@@ -36,8 +36,9 @@ def log(msg):
     print(msg, flush=True)
 
 
-# Chirp 3 HD は1文の長さに上限がある。超えた文は読点で分割し文末扱いにする。
-MAX_SENTENCE_CHARS = 100
+# Chirp 3 HD は1文の長さに上限がある（バイト基準とみられる）。
+# 日本語60字 ≒ 180バイトに抑え、文ごとに改行を入れると通る。
+MAX_SENTENCE_CHARS = 60
 
 
 def split_long_sentence(s, limit=MAX_SENTENCE_CHARS):
@@ -73,11 +74,11 @@ def chunk_text(text, max_chars=MAX_CHUNK_CHARS):
             sentences.extend(split_long_sentence(p))
     chunks, cur = [], ""
     for s in sentences:
-        if cur and len(cur) + len(s) > max_chars:
+        if cur and len(cur) + len(s) + 1 > max_chars:
             chunks.append(cur)
             cur = s
         else:
-            cur += s
+            cur = (cur + "\n" + s) if cur else s
     if cur:
         chunks.append(cur)
     return chunks
