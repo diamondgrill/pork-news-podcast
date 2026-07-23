@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>July 24 Pork Industry News</title>
+      <description>China suspends retaliatory pork tariffs and April exports rebound 33 percent, while African swine fever flares up in Spain, Germany, and South Korea.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-24/porkcast-2026-07-24.mp3" length="4545141" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-07-24</guid>
+      <pubDate>Fri, 24 Jul 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:09:28</itunes:duration>
+    </item>
+    <item>
       <title>July 23 Pork Industry News</title>
       <description>Tight U.S. breeding herds keep hog prices elevated even as global oversupply warnings grow, African swine fever spreads in Germany and Poland, and China, Canada, and Mexico trade issues remain in focus.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-23/porkcast-2026-07-23.mp3" length="4190084" type="audio/mpeg"/>
