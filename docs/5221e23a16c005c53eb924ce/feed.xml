@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>July 31 Pork Industry News</title>
+      <description>U.S. hog prices and lean hog futures firm up even as African Swine Fever and foot-and-mouth risk rise worldwide, U.S. pork exports to Japan surge 20 percent, and Mexico lifts its Pseudorabies Virus restrictions on U.S. pork offal.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-31/porkcast-2026-07-31.mp3" length="4075146" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-07-31</guid>
+      <pubDate>Fri, 31 Jul 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:29</itunes:duration>
+    </item>
+    <item>
       <title>July 29 Pork Industry News</title>
       <description>USDA trims its 2026 pork production and price outlook while hog prices and futures stay firm, global ASF and foot-and-mouth outbreaks hit record levels, and U.S.-China tariff talks advance as Smithfield announces a 1.3 billion dollar plant investment.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-29/porkcast-2026-07-29.mp3" length="4906884" type="audio/mpeg"/>
