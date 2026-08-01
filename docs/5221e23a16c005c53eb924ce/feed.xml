@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 2 Pork Industry News</title>
+      <description>Finland confirms its first African Swine Fever case as global disease risk widens, U.S. hog prices swing between firming cutout values and softer futures, and China's pork imports slide over 26 percent while Europe faces new tariffs and 20-year-low prices.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-02/porkcast-2026-08-02.mp3" length="4336579" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-02</guid>
+      <pubDate>Sun, 02 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:09:02</itunes:duration>
+    </item>
+    <item>
       <title>July 31 Pork Industry News</title>
       <description>U.S. hog prices and lean hog futures firm up even as African Swine Fever and foot-and-mouth risk rise worldwide, U.S. pork exports to Japan surge 20 percent, and Mexico lifts its Pseudorabies Virus restrictions on U.S. pork offal.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-07-31/porkcast-2026-07-31.mp3" length="4075146" type="audio/mpeg"/>
