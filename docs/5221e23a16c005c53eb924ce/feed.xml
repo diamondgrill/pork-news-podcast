@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 10 Pork Industry News</title>
+      <description>U.S. hog futures and packer margins slide as a global pork supply glut weighs on prices, African swine fever containment continues in Germany and the Philippines, and U.S. pork exports and Tyson Foods post strong results.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-10/porkcast-2026-08-10.mp3" length="4072220" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-10</guid>
+      <pubDate>Mon, 10 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:29</itunes:duration>
+    </item>
+    <item>
       <title>August 9 Pork Industry News</title>
       <description>New African swine fever cases hit Finland and South Korea while Estonia unveils a recovery plan, U.S. hog prices slide from their summer peak, and Tyson Foods settles a pork price-fixing lawsuit for $85 million.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-09/porkcast-2026-08-09.mp3" length="5201755" type="audio/mpeg"/>
