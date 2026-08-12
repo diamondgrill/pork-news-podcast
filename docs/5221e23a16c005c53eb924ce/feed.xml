@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 13 Pork Industry News</title>
+      <description>Lean hog futures drift lower and African swine fever hits a Hungarian farm, while JBS posts record revenue alongside a net loss and Smithfield cuts its 2026 guidance.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-13/porkcast-2026-08-13.mp3" length="4093327" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-13</guid>
+      <pubDate>Thu, 13 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:32</itunes:duration>
+    </item>
+    <item>
       <title>August 12 Pork Industry News</title>
       <description>JBS announces a global CEO transition and a $2.5 billion Indonesian joint venture, hog and pork prices swing across the U.S. and Brazil, and African swine fever spreads further in Spain and Italy.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-12/porkcast-2026-08-12.mp3" length="4191338" type="audio/mpeg"/>
