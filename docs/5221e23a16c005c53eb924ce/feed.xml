@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 15 Pork Industry News</title>
+      <description>Lean hog futures and cash prices slide through the week while African swine fever developments unfold in Spain and South Africa, alongside a new US tariff on Chilean pork and a Brazilian court ruling on the soy moratorium.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-15/porkcast-2026-08-15.mp3" length="5707485" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-15</guid>
+      <pubDate>Sat, 15 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:11:53</itunes:duration>
+    </item>
+    <item>
       <title>August 13 Pork Industry News</title>
       <description>Lean hog futures drift lower and African swine fever hits a Hungarian farm, while JBS posts record revenue alongside a net loss and Smithfield cuts its 2026 guidance.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-13/porkcast-2026-08-13.mp3" length="4093327" type="audio/mpeg"/>
