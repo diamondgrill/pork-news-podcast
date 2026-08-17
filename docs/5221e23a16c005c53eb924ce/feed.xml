@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 18 Pork Industry News</title>
+      <description>Japan's retail chicken and pork prices hit a record high in August 2026, driven by a weaker yen and rising production costs.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-18/porkcast-2026-08-18.mp3" length="396478" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-18</guid>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:00:50</itunes:duration>
+    </item>
+    <item>
       <title>August 15 Pork Industry News</title>
       <description>Lean hog futures and cash prices slide through the week while African swine fever developments unfold in Spain and South Africa, alongside a new US tariff on Chilean pork and a Brazilian court ruling on the soy moratorium.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-15/porkcast-2026-08-15.mp3" length="5707485" type="audio/mpeg"/>
