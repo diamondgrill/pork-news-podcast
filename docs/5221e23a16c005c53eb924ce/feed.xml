@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 20 Pork Industry News</title>
+      <description>CME lean hog prices dip while a Texas A&amp;M economist flags 25 straight months of farrow-to-finish profits, African swine fever spreads among Finland's wild boar, and a Proposition 12 fix drops out of the stalled Senate farm bill.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-20/porkcast-2026-08-20.mp3" length="5685333" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-20</guid>
+      <pubDate>Thu, 20 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:11:51</itunes:duration>
+    </item>
+    <item>
       <title>August 18 Pork Industry News</title>
       <description>Japan's retail chicken and pork prices hit a record high in August 2026, driven by a weaker yen and rising production costs.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-18/porkcast-2026-08-18.mp3" length="396478" type="audio/mpeg"/>
