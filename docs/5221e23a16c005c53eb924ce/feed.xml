@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 21 Pork Industry News</title>
+      <description>CME lean hog futures slip as China's Muyuan Foods posts a first-half loss and Brazilian hog prices sink below 2022-crisis levels, while African swine fever stays contained in Spain and a wave of Brazilian production, export, and food-safety news rounds out the day.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-21/porkcast-2026-08-21.mp3" length="4380047" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-21</guid>
+      <pubDate>Fri, 21 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:09:07</itunes:duration>
+    </item>
+    <item>
       <title>August 20 Pork Industry News</title>
       <description>CME lean hog prices dip while a Texas A&amp;M economist flags 25 straight months of farrow-to-finish profits, African swine fever spreads among Finland's wild boar, and a Proposition 12 fix drops out of the stalled Senate farm bill.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-20/porkcast-2026-08-20.mp3" length="5685333" type="audio/mpeg"/>
