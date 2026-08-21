@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 22 Pork Industry News</title>
+      <description>African swine fever keeps spreading across Europe with new cases in Hungary, Poland, and Serbia, CME lean hog futures swing from a slide to a bounce, and JBS moves to fully absorb Pilgrim's Pride.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-22/porkcast-2026-08-22.mp3" length="4096461" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-22</guid>
+      <pubDate>Sat, 22 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:32</itunes:duration>
+    </item>
+    <item>
       <title>August 21 Pork Industry News</title>
       <description>CME lean hog futures slip as China's Muyuan Foods posts a first-half loss and Brazilian hog prices sink below 2022-crisis levels, while African swine fever stays contained in Spain and a wave of Brazilian production, export, and food-safety news rounds out the day.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-21/porkcast-2026-08-21.mp3" length="4380047" type="audio/mpeg"/>
