@@ -42,7 +42,8 @@ jobs:
         working-directory: main
         env:
           GOOGLE_TTS_API_KEY: ${{ secrets.GOOGLE_TTS_API_KEY }}
-          GH_TOKEN: ${{ github.token }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         run: python3 scripts/build_episode.py
 
       - name: Commit results to main

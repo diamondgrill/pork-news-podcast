@@ -3,7 +3,7 @@
 
 GitHub Actions 上での実行を想定:
   - 環境変数 GOOGLE_TTS_API_KEY : Google Cloud Text-to-Speech の API キー
-  - 環境変数 GH_TOKEN / GITHUB_REPOSITORY : gh CLI でのリリース作成に使用
+  - 環境変数 CF_ACCOUNT_ID / CF_API_TOKEN : Cloudflare R2 への mp3 アップロードに使用
 
 ローカルで RSS だけ再生成する場合:
   python3 scripts/build_episode.py --feed-only
@@ -197,28 +197,42 @@ def build_audio(script_path, out_mp3, api_key, voices=None, language=None):
     return dur
 
 
-def publish_release(slug, mp3_path):
-    repo = os.environ.get("GITHUB_REPOSITORY", CONFIG["repo"])
-    tag = f"ep-{slug}"
-    exists = (
-        subprocess.run(
-            ["gh", "release", "view", tag, "-R", repo],
-            capture_output=True,
-        ).returncode
-        == 0
+def audio_url_for(slug):
+    """配信 URL は slug から機械的に決まる（保存済みの値には依存しない）。"""
+    return f"{CONFIG['audio_base_url'].rstrip('/')}/porkcast-{slug}.mp3"
+
+
+def publish_audio(slug, mp3_path):
+    """mp3 を Cloudflare R2 に置く。
+
+    GitHub Releases は 2026-08 時点で、登録した content_type を無視して
+    application/octet-stream + Content-Disposition: attachment で配信するようになり、
+    Apple Podcasts が音声として再生できなくなったため R2 に移した。
+    R2 は PUT 時の Content-Type がそのまま配信されるので audio/mpeg を明示する。
+    """
+    account = os.environ.get("CF_ACCOUNT_ID")
+    token = os.environ.get("CF_API_TOKEN")
+    if not (account and token):
+        sys.exit("環境変数 CF_ACCOUNT_ID / CF_API_TOKEN が未設定（R2 へのアップロードに必要）")
+    key = f"porkcast-{slug}.mp3"
+    endpoint = (
+        f"https://api.cloudflare.com/client/v4/accounts/{account}"
+        f"/r2/buckets/{CONFIG['r2_bucket']}/objects/{key}"
     )
-    if exists:
-        subprocess.run(
-            ["gh", "release", "upload", tag, str(mp3_path), "-R", repo, "--clobber"],
-            check=True,
-        )
-    else:
-        subprocess.run(
-            ["gh", "release", "create", tag, str(mp3_path), "-R", repo,
-             "--title", f"{slug} エピソード", "--notes", ""],
-            check=True,
-        )
-    return f"https://github.com/{repo}/releases/download/{tag}/{mp3_path.name}"
+    req = urllib.request.Request(
+        endpoint,
+        data=mp3_path.read_bytes(),
+        method="PUT",
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "audio/mpeg",
+        },
+    )
+    with urllib.request.urlopen(req, timeout=300) as res:
+        body = json.loads(res.read().decode("utf-8"))
+    if not body.get("success"):
+        sys.exit(f"R2 アップロード失敗: {body.get('errors')}")
+    return audio_url_for(slug)
 
 
 def pending_episodes():
@@ -246,7 +260,7 @@ def process_episode(ep_dir, api_key):
         dur = build_audio(ep_dir / "script.txt", mp3, api_key,
                           voices=voices, language=language)
         size = mp3.stat().st_size
-        url = publish_release(slug, mp3)
+        url = publish_audio(slug, mp3)
     (ep_dir / "episode.json").write_text(
         json.dumps(
             {"audio_url": url, "bytes": size, "duration": round(dur)},
@@ -288,7 +302,7 @@ def build_feed():
             f"""    <item>
       <title>{escape(m["title"])}</title>
       <description>{escape(m.get("description", ""))}</description>
-      <enclosure url="{escape(m["audio_url"])}" length="{m.get("bytes", 0)}" type="audio/mpeg"/>
+      <enclosure url="{escape(audio_url_for(m.get("slug", m["date"])))}" length="{m.get("bytes", 0)}" type="audio/mpeg"/>
       <guid isPermaLink="false">porkcast-{m.get("slug", m["date"])}</guid>
       <pubDate>{pub}</pubDate>
       <itunes:duration>{durs}</itunes:duration>

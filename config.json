@@ -9,6 +9,8 @@
     "en-US-Neural2-D"
   ],
   "repo": "diamondgrill/pork-news-podcast",
+  "audio_base_url": "https://podcast.nirokulab.com",
+  "r2_bucket": "porkcast-audio",
   "base_url": "https://diamondgrill.github.io/pork-news-podcast",
   "feed_token": "5221e23a16c005c53eb924ce",
   "max_feed_items": 60
