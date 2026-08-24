@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 25 Pork Industry News</title>
+      <description>US hog futures and cash prices moved on two USDA reports, Brazil's soybean market hit a multi-year high on tight supply and Chinese buying, and Spain reported a full week with no new African swine fever cases in one high-risk zone.</description>
+      <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-25/porkcast-2026-08-25.mp3" length="3985911" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-25</guid>
+      <pubDate>Tue, 25 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:18</itunes:duration>
+    </item>
+    <item>
       <title>August 24 Pork Industry News</title>
       <description>A light news day: a possible contraction in Denmark's pig herd size and its potential impact on the UK pork market.</description>
       <enclosure url="https://github.com/diamondgrill/pork-news-podcast/releases/download/ep-2026-08-24/porkcast-2026-08-24.mp3" length="269627" type="audio/mpeg"/>
