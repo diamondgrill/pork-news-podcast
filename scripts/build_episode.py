@@ -3,13 +3,16 @@
 
 GitHub Actions 上での実行を想定:
   - 環境変数 GOOGLE_TTS_API_KEY : Google Cloud Text-to-Speech の API キー
-  - 環境変数 CF_ACCOUNT_ID / CF_API_TOKEN : Cloudflare R2 への mp3 アップロードに使用
+  - 環境変数 CF_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY :
+    Cloudflare R2 への mp3 アップロードに使用（S3 互換 API）
 
 ローカルで RSS だけ再生成する場合:
   python3 scripts/build_episode.py --feed-only
 """
 import argparse
 import base64
+import hashlib
+import hmac
 import json
 import os
 import re
@@ -202,36 +205,84 @@ def audio_url_for(slug):
     return f"{CONFIG['audio_base_url'].rstrip('/')}/porkcast-{slug}.mp3"
 
 
+def _sigv4_headers(method, host, path, payload, content_type, akid, secret):
+    """R2 の S3 互換 API 用に AWS Signature V4 のヘッダを組む（region は固定で auto）。"""
+    now = datetime.now(timezone.utc)
+    amzdate = now.strftime("%Y%m%dT%H%M%SZ")
+    datestamp = now.strftime("%Y%m%d")
+    scope = f"{datestamp}/auto/s3/aws4_request"
+    payload_hash = hashlib.sha256(payload).hexdigest()
+
+    signed_headers = "content-type;host;x-amz-content-sha256;x-amz-date"
+    canonical = "\n".join([
+        method,
+        path,
+        "",
+        f"content-type:{content_type}",
+        f"host:{host}",
+        f"x-amz-content-sha256:{payload_hash}",
+        f"x-amz-date:{amzdate}",
+        "",
+        signed_headers,
+        payload_hash,
+    ])
+    to_sign = "\n".join([
+        "AWS4-HMAC-SHA256",
+        amzdate,
+        scope,
+        hashlib.sha256(canonical.encode("utf-8")).hexdigest(),
+    ])
+
+    def sign(key, msg):
+        return hmac.new(key, msg.encode("utf-8"), hashlib.sha256).digest()
+
+    k = sign(f"AWS4{secret}".encode("utf-8"), datestamp)
+    for part in ("auto", "s3", "aws4_request"):
+        k = sign(k, part)
+    signature = hmac.new(k, to_sign.encode("utf-8"), hashlib.sha256).hexdigest()
+
+    return {
+        "Authorization": (
+            f"AWS4-HMAC-SHA256 Credential={akid}/{scope}, "
+            f"SignedHeaders={signed_headers}, Signature={signature}"
+        ),
+        "Content-Type": content_type,
+        "x-amz-content-sha256": payload_hash,
+        "x-amz-date": amzdate,
+    }
+
+
 def publish_audio(slug, mp3_path):
-    """mp3 を Cloudflare R2 に置く。
+    """mp3 を Cloudflare R2 に置く（S3 互換 API）。
 
     GitHub Releases は 2026-08 時点で、登録した content_type を無視して
     application/octet-stream + Content-Disposition: attachment で配信するようになり、
     Apple Podcasts が音声として再生できなくなったため R2 に移した。
     R2 は PUT 時の Content-Type がそのまま配信されるので audio/mpeg を明示する。
+
+    トークンは porkcast-audio バケットだけに絞った Object Read & Write を使う。
+    バケット単位に絞ったトークンは S3 互換 API でしか使えない（Cloudflare REST API は
+    アカウント全体の権限を要求する）ため、ここで SigV4 を組んでいる。
     """
     account = os.environ.get("CF_ACCOUNT_ID")
-    token = os.environ.get("CF_API_TOKEN")
-    if not (account and token):
-        sys.exit("環境変数 CF_ACCOUNT_ID / CF_API_TOKEN が未設定（R2 へのアップロードに必要）")
-    key = f"porkcast-{slug}.mp3"
-    endpoint = (
-        f"https://api.cloudflare.com/client/v4/accounts/{account}"
-        f"/r2/buckets/{CONFIG['r2_bucket']}/objects/{key}"
-    )
+    akid = os.environ.get("R2_ACCESS_KEY_ID")
+    secret = os.environ.get("R2_SECRET_ACCESS_KEY")
+    if not (account and akid and secret):
+        sys.exit("環境変数 CF_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY が未設定")
+
+    host = f"{account}.r2.cloudflarestorage.com"
+    path = f"/{CONFIG['r2_bucket']}/porkcast-{slug}.mp3"
+    payload = mp3_path.read_bytes()
+    headers = _sigv4_headers("PUT", host, path, payload, "audio/mpeg", akid, secret)
     req = urllib.request.Request(
-        endpoint,
-        data=mp3_path.read_bytes(),
-        method="PUT",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "audio/mpeg",
-        },
+        f"https://{host}{path}", data=payload, method="PUT", headers=headers,
     )
-    with urllib.request.urlopen(req, timeout=300) as res:
-        body = json.loads(res.read().decode("utf-8"))
-    if not body.get("success"):
-        sys.exit(f"R2 アップロード失敗: {body.get('errors')}")
+    try:
+        with urllib.request.urlopen(req, timeout=300) as res:
+            if res.status not in (200, 201):
+                sys.exit(f"R2 アップロード失敗: HTTP {res.status}")
+    except urllib.error.HTTPError as e:
+        sys.exit(f"R2 アップロード失敗: HTTP {e.code} {e.read().decode('utf-8', 'replace')[:500]}")
     return audio_url_for(slug)
 
 
