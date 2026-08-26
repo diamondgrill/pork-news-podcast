@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 27 Pork Industry News</title>
+      <description>U.S. hog prices ease as a new 50% U.S.-Canada tariff disrupts the cross-border pig trade, while weak hog prices drag down earnings at Denmark's FirstFarms and China's COFCO Joycome Foods.</description>
+      <enclosure url="https://podcast.nirokulab.com/porkcast-2026-08-27.mp3" length="4212654" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-27</guid>
+      <pubDate>Thu, 27 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:08:47</itunes:duration>
+    </item>
+    <item>
       <title>August 26 Pork Industry News</title>
       <description>US hog futures and cash prices moved through two trading sessions while Rabobank sees slaughter running below year-ago levels, and UK farm groups sought emergency aid amid drought and packer contract terminations.</description>
       <enclosure url="https://podcast.nirokulab.com/porkcast-2026-08-26.mp3" length="4132406" type="audio/mpeg"/>
