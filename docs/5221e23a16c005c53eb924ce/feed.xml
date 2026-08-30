@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>August 31 Pork Industry News</title>
+      <description>Eurostat data shows the EU pig herd edged lower at the end of 2025, even as the breeding herd and piglet numbers turned upward.</description>
+      <enclosure url="https://podcast.nirokulab.com/porkcast-2026-08-31.mp3" length="779537" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-08-31</guid>
+      <pubDate>Mon, 31 Aug 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:01:37</itunes:duration>
+    </item>
+    <item>
       <title>August 28 Pork Industry News</title>
       <description>The UK's National Pig Association warns the industry is 'teetering on the brink' amid European oversupply and processor contract terminations, while Rabobank's World Pork Map shows China's import dominance fading as global pork trade diversifies.</description>
       <enclosure url="https://podcast.nirokulab.com/porkcast-2026-08-28.mp3" length="4116106" type="audio/mpeg"/>
