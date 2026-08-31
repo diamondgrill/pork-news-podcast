@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>September 1 Pork Industry News</title>
+      <description>CME hog and cutout prices move higher even as Rabobank sees U.S. slaughter running below year-ago levels into 2026, while a U.S.-Canada tariff standoff threatens feeder pig trade and European herd and price data shift.</description>
+      <enclosure url="https://podcast.nirokulab.com/porkcast-2026-09-01.mp3" length="4573980" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-09-01</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:09:32</itunes:duration>
+    </item>
+    <item>
       <title>August 31 Pork Industry News</title>
       <description>Eurostat data shows the EU pig herd edged lower at the end of 2025, even as the breeding herd and piglet numbers turned upward.</description>
       <enclosure url="https://podcast.nirokulab.com/porkcast-2026-08-31.mp3" length="779537" type="audio/mpeg"/>
