@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>September 3 Pork Industry News</title>
+      <description>The EU suspends Brazilian meat imports over antimicrobial rules, Japan's pork imports shift toward Brazil, and hog and grain futures hold steady.</description>
+      <enclosure url="https://podcast.nirokulab.com/porkcast-2026-09-03.mp3" length="4970414" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-09-03</guid>
+      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:10:21</itunes:duration>
+    </item>
+    <item>
       <title>September 2 Pork Industry News</title>
       <description>CME and CBOT hog, cattle, and grain futures shift as USDA pork carcass prices climb, while U.S.-Canada breeding herd data show a shrinking sow herd and JBS pushes Washington for lower Brazilian beef tariffs.</description>
       <enclosure url="https://podcast.nirokulab.com/porkcast-2026-09-02.mp3" length="4139720" type="audio/mpeg"/>
