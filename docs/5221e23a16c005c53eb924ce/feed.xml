@@ -8,6 +8,14 @@
     <itunes:author>Pork Industry News</itunes:author>
     <itunes:block>Yes</itunes:block>
     <item>
+      <title>September 5 Pork Industry News</title>
+      <description>U.S. hog and pork prices slide through the week, African swine fever persists in Catalonia while the Philippines approves its first vaccine, and pork trade shifts in the UK, Spain, and Brazil.</description>
+      <enclosure url="https://podcast.nirokulab.com/porkcast-2026-09-05.mp3" length="5572484" type="audio/mpeg"/>
+      <guid isPermaLink="false">porkcast-2026-09-05</guid>
+      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
+      <itunes:duration>0:11:37</itunes:duration>
+    </item>
+    <item>
       <title>September 3 Pork Industry News</title>
       <description>The EU suspends Brazilian meat imports over antimicrobial rules, Japan's pork imports shift toward Brazil, and hog and grain futures hold steady.</description>
       <enclosure url="https://podcast.nirokulab.com/porkcast-2026-09-03.mp3" length="4970414" type="audio/mpeg"/>
